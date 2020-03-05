@@ -32,7 +32,6 @@ int main(){
 	printOut(board, t_height, t_width);*/
 
 	Board board;
-	board = Board();
 	board.printOut();
 	return 0;
 }

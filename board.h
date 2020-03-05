@@ -8,6 +8,9 @@ class Board {
 
     public:
         Board();
+        bool validCell(int row, int col);
+        int adjCells(int row, int col);
+        void envolve();
         void printOut();
 
 };

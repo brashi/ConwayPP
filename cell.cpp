@@ -14,7 +14,7 @@ Cell::Cell(){
 	yCoord = 0;
 }
 Cell::Cell(int x, int y){
-	     state = 0;
-	     xCoord = x;
-	     yCoord = y;
+	state = 0;
+	xCoord = x;
+	yCoord = y;
 }
