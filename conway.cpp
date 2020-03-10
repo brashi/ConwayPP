@@ -32,6 +32,11 @@ int main(){
 	printOut(board, t_height, t_width);*/
 
 	Board board;
-	board.printOut();
+	while(1)
+	{
+		board.printOut();
+		usleep(400000);
+		board.envolve();
+	}
 	return 0;
 }
