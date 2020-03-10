@@ -1,4 +1,5 @@
 #include "cell.h"
+#include <stdlib.h>
 
 void Cell::setState(bool st) {
 	state = st;
@@ -14,7 +15,7 @@ Cell::Cell(){
 	yCoord = 0;
 }
 Cell::Cell(int x, int y){
-	state = 0;
+	state = rand() < RAND_MAX / 10 ? 1 : 0;
 	xCoord = x;
 	yCoord = y;
 }

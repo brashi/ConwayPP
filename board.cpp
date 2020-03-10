@@ -8,12 +8,29 @@ bool Board::validCell(int row, int col){
     (col >= 0) && (col < width);
 }
 int Board::adjCells(int row, int col){
+    int count = 0;
+    if(validCell(row-1, col-1) && mat[row-1][col-1].getState()) count++; //Canto superior esquerdo
+  	if(validCell(row-1, col) && mat[row-1][col].getState()) count++; //Encima
+  	if(validCell(row-1, col+1) && mat[row-1][col+1].getState()) count++; //Canto superior direito
+  	if(validCell(row, col-1) && mat[row][col-1].getState()) count++; //Esquerda
+  	if(validCell(row, col+1) && mat[row][col+1].getState()) count++; //Direita
+  	if(validCell(row+1, col-1) && mat[row+1][col-1].getState()) count++; //Canto inferior esquerdo
+  	if(validCell(row+1, col) && mat[row+1][col].getState()) count++; //Abaixo
+  	if(validCell(row+1, col+1) && mat[row+1][col+1].getState()) count++; //Canto inferior direito
 
+    return count;
 }
 void Board::envolve(){
+    bool aux[height][width];
     for(int i = 0; i < height; i++){
         for(int j = 0; j < width; j++){
-            if
+            aux[i][j] = mat[i][j].getState;
+        }
+    }
+
+    for(int i = 0; i < height; i++){
+        for(int j = 0; j < width; j++){
+            int n = adjCells(i, j);
         }
     }
 }
@@ -21,6 +38,7 @@ void Board::envolve(){
 void Board::printOut(){
     for(int i =  0; i < height; i++){
         for(int j = 0; j < width; j++){
+            //std::cout << adjCells(i, j);
             std::cout << mat[i][j].getState();
         }
         std::cout << std::endl;

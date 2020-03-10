@@ -4,6 +4,7 @@ class Cell {
 		int xCoord;
 		int yCoord;
 		
+		
 	public:
 		Cell();
 		Cell(int x, int y);
