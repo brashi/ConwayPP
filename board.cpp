@@ -3,11 +3,11 @@
 #include <unistd.h>
 #include <iostream>
 
-bool Board::validCell(int row, int col){
+bool Board::validCell(int row, int col) {
     return (row >= 0) && (row < height) &&
     (col >= 0) && (col < width);
 }
-int Board::adjCells(int row, int col){
+int Board::adjCells(int row, int col) {
     int count = 0;
     if(validCell(row-1, col-1) && mat[row-1][col-1].getState()) count++; //Canto superior esquerdo
   	if(validCell(row-1, col) && mat[row-1][col].getState()) count++; //Encima
@@ -20,7 +20,7 @@ int Board::adjCells(int row, int col){
 
     return count;
 }
-void Board::envolve(){
+void Board::envolve() {
     bool aux[height][width];
     for(int i = 0; i < height; i++){
         for(int j = 0; j < width; j++){
@@ -52,7 +52,7 @@ void Board::envolve(){
     }
 }
 
-void Board::printOut(){
+void Board::printOut() {
     std::cout << std::flush;
     for(int i =  0; i < height; i++){
         for(int j = 0; j < width; j++){
